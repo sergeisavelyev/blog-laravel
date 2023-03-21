@@ -1,6 +1,7 @@
 import './bootstrap';
 import '~admin/plugins/jquery/jquery.js';
 import '~admin/plugins/bootstrap/js/bootstrap.bundle.min.js';
+import '~admin/plugins/select2/js/select2.full.js';
 import '~admin/js/adminlte.js';
 import '~admin/js/demo.js';
 
