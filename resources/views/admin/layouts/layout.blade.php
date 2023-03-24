@@ -7,7 +7,11 @@
     <title>AdminLTE 3 | Blank Page</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    <style>
+        .ck-editor__editable_inline {
+            min-height: 300px; 
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -337,6 +341,21 @@
             $(this).closest('.has-treeview').addClass('menu-open');
         }
     });
+</script>
+<script src="/public/ckeditor5/build/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#description' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#content' ) )
+        .catch( error => {
+            console.error( error );
+        } );
 </script>
 
 </html>
