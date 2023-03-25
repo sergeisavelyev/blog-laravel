@@ -9,7 +9,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         .ck-editor__editable_inline {
-            min-height: 300px; 
+            min-height: 300px;
         }
     </style>
 </head>
@@ -304,6 +304,12 @@
                             </div>
                         @endif
 
+                        @if (session()->has('error'))
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+
                         @if (session()->has('success'))
                             <div class="alert alert-success">
                                 {{ session('success') }}
@@ -345,17 +351,22 @@
 <script src="/public/ckeditor5/build/ckeditor.js"></script>
 <script>
     ClassicEditor
-        .create( document.querySelector( '#description' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+        .create(document.querySelector('#description'))
+        .catch(error => {
+            console.error(error);
+        });
 </script>
 <script>
     ClassicEditor
-        .create( document.querySelector( '#content' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+        .create(document.querySelector('#content'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+<script>
+    $(function() {
+        bsCustomFileInput.init();
+    });
 </script>
 
 </html>
